@@ -9,7 +9,7 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 [![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/yourlsiccmetaredirect?label=Issues&color=orange)](https://github.com/ivancarlosti/yourlsiccmetaredirect/issues)
 [![License](https://img.shields.io/github/license/ivancarlosti/yourlsiccmetaredirect?label=License)](LICENSE)
 [![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/yourlsiccmetaredirect/security)
-[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa)](https://github.com/ivancarlosti/yourlsiccmetaredirect/tree/main?tab=coc-ov-file)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa)](https://github.com/ivancarlosti/yourlsiccmetaredirect/main?tab=coc-ov-file)
 
 ## Inspiration
 * Project inspired by [yourls-meta-redirect](https://github.com/pureexe/yourls-meta-redirect), license preserved.
