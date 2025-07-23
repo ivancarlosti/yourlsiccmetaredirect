@@ -9,7 +9,7 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/yourlsiccmetaredirect?label=Activity)](https://github.com/ivancarlosti/yourlsiccmetaredirect/pulse)  
 [![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/yourlsiccmetaredirect?label=Issues&color=orange)](https://github.com/ivancarlosti/yourlsiccmetaredirect/issues)
 [![License](https://img.shields.io/github/license/ivancarlosti/yourlsiccmetaredirect?label=License)](LICENSE)
-[![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/yourlsiccmetaredirect/security)
+[![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/yourlsiccmetaredirect/security)asas
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa)](https://github.com/ivancarlosti/yourlsiccmetaredirect?tab=coc-ov-file)
 <!-- endbuttons -->
 
@@ -47,7 +47,7 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 [![Discord](https://img.shields.io/badge/Discord-@ivancarlos.me-5865F2)](https://discord.com/users/ivancarlos.me)
 [![Signal](https://img.shields.io/badge/Signal-@ivancarlos.01-2592E9)](https://icc.gg/.signal)
 [![Telegram](https://img.shields.io/badge/Telegram-@ivancarlos-26A5E4)](https://t.me/ivancarlos)  
-[![Website](https://img.shields.io/badge/Website-ivancarlos.me-FF6B6B)](https://ivancarlos.me)
+[![Website](https://img.shields.io/badge/Website-ivancarlos.me-FF6B6B)](https://ivancarlos.me)sasasas
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ivancarlosti?label=GitHub%20Sponsors&color=ffc0cb)][sponsor]
 
 ## 📃 License
