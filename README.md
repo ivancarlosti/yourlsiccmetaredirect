@@ -12,7 +12,7 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/m365auditor/tree/main?tab=coc-ov-file)
 
 ## Inspiration
-* Project inspired by [Yourls-meta-redirect](https://github.com/pureexe/Yourls-meta-redirect), license preserved.
+* Project inspired by [yourls-meta-redirect](https://github.com/pureexe/yourls-meta-redirect), license preserved.
 
 ## Instructions
 * Download the plugin release
