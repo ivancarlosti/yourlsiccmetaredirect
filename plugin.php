@@ -34,5 +34,5 @@ function icc_mrdr( $args ) {
         echo 'You will be redirected to <a href="' . htmlspecialchars($url, ENT_QUOTES) . '">' . htmlspecialchars($url) . '</a>.';
         exit;
     }
-    // else no prefix match, normal YOURLS continues
+    // else no prefix match, normal YOURLS continues.
 }
