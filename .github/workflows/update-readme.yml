@@ -1,0 +1,68 @@
+name: Update README Buttons
+
+on:
+  workflow_dispatch: # Allows manual triggering
+  schedule:
+    - cron: '0 4 * * *' # Runs every day at 4AM UTC
+
+jobs:
+  update-readme-buttons:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_REPO: ivancarlosti/.github
+      SOURCE_BRANCH: main
+
+    steps:
+      # Checkout current (target) repository
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+
+      # Checkout source README
+      - name: Checkout source READMEs
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.SOURCE_REPO }}
+          ref: ${{ env.SOURCE_BRANCH }}
+          path: source_readme
+
+      # Extract and update buttons section
+      - name: Replace buttons section in README.md
+        id: update-readme
+        run: |
+          set -e
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+
+          # Extract section from source README
+          SECTION=$(awk '/<!-- buttons -->/{flag=1;next}/<!-- endbuttons -->/{flag=0}flag' source_readme/README.md)
+
+          # Replace .github with actual repo name
+          SECTION_UPDATED=$(echo "$SECTION" | sed "s/\.github/$REPO_NAME/g")
+
+          # Replace section in current repo README
+          awk -v new_section="$SECTION_UPDATED" '
+            /<!-- buttons -->/ {
+              print;
+              print new_section;
+              skip=1;
+              next
+            }
+            /<!-- endbuttons -->/ && skip {
+              skip=0;
+              next
+            }
+            !skip { print }
+          ' README.md > README.tmp && mv README.tmp README.md
+
+      # Make sure submodule-like folder is not committed
+      - name: Remove source_readme from git index
+        run: git rm --cached -r source_readme || true
+
+      # Commit and push if README.md changed
+      - name: Commit updated README
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: README.md
+          commit_message: "chore: sync README buttons from template"
+          branch: ${{ github.ref_name }}
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Required for push
