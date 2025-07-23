@@ -2,7 +2,7 @@
 This YOURLS plugin skip banned URLs on some services that check for redirected URLs to filter them. When the shortened URL is called using the configured character before your keyword it will make the redirect using `<meta>` technique.
 test [cc]
 
-[![Stars](https://img.shields.io/github/stars/ivancarlosti/yourlsiccmetaredirect?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/yourlsiccmetaredirect/stargazers)
+[![Stars](https://img.shields.io/github/stars/ivancarlosti/yourlsiccmetaredirect?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/yourlsiccmetaredirect/stargazers[cc])
 [![Watchers](https://img.shields.io/github/watchers/ivancarlosti/yourlsiccmetaredirect?label=Watchers&style=flat&color=red)](https://github.com/sponsors/ivancarlosti)
 [![Forks](https://img.shields.io/github/forks/ivancarlosti/yourlsiccmetaredirect?label=Forks&style=flat&color=ff69b4)](https://github.com/sponsors/ivancarlosti)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ivancarlosti/yourlsiccmetaredirect?label=Last%20Commit)](https://github.com/ivancarlosti/yourlsiccmetaredirect/commits)
