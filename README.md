@@ -13,7 +13,7 @@ How to
 * Update plugin.php if needed (default keyworkd is "." (dot)
 * Upload folder `icc-meta-redirect` into `/user/plugins
 * Go to the Plugins administration page and activate the plugin
-* Have fun
+* You can now use your character to make a meta redirect instead of server redirect, example: icc.gg/.signal
 
 ========================
 
