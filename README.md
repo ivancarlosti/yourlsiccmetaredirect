@@ -10,7 +10,7 @@ This is Yourls plugin use to skip banned URLs on some services that check for re
 How to
 ===================
 * Download the plugin release
-* Update plugin.php if needed (default keyworkd is "." (dot)
+* Update plugin.php if needed, default keyword is `.` (dot) and default wait timew is `1` second.
 * Upload folder `icc-meta-redirect` into `/user/plugins
 * Go to the Plugins administration page and activate the plugin
 * You can now use your character to make a meta redirect instead of server redirect, example: icc.gg/.signal
