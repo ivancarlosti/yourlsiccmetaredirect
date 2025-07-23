@@ -27,7 +27,6 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 * YOURLS 1.10+
 
 <!-- footer -->
-<!-- footer -->
 ---
 
 ## 🧑‍💻 Consulting and technical support
