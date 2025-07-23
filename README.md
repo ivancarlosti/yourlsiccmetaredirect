@@ -11,19 +11,18 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 [![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/m365auditor/security)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-1.4-4baaaa)](https://github.com/ivancarlosti/m365auditor/tree/main?tab=coc-ov-file)
 
-How to
-===================
+## Inspiration
+* Project inspired by [Yourls-meta-redirect](https://github.com/pureexe/Yourls-meta-redirect), license preserved.
+
+## Instructions
 * Download the plugin release
 * Update plugin.php if needed, default character is `.` (dot), default wait time is `1` second.
 * Upload folder `icc-meta-redirect` with files into `/user/plugins`
 * Go to the Plugins administration page and activate the plugin
 * You can now use your character to make a meta redirect instead of server redirect, example: [icc.gg/.signal](https://icc.gg/.signal)
 
-========================
-
-Tested on YOURLS 1.10+
-
-Inspired by [Yourls-meta-redirect](https://github.com/pureexe/Yourls-meta-redirect) project with some fixes.
+## Requirements
+* YOURLS 1.10+
 
 ---
 
