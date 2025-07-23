@@ -22,6 +22,7 @@ How to
 ========================
 
 Tested on YOURLS 1.10+
+
 Inspired by [Yourls-meta-redirect](https://github.com/pureexe/Yourls-meta-redirect) project with some fixes.
 
 ---
