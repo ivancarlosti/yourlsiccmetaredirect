@@ -1,56 +1,58 @@
-name: Update README Buttons
+name: Update README
+
+permissions:
+  contents: write
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * *' # Daily at 4 AM UTC
 
 jobs:
-  update-readme:
+  update-readme-buttons:
     runs-on: ubuntu-latest
-
     env:
       SOURCE_REPO: ivancarlosti/.github
       SOURCE_BRANCH: main
 
     steps:
-      - name: Checkout current repo
+      - name: Checkout this repository
         uses: actions/checkout@v4
 
-      - name: Checkout source README template
+      - name: Checkout source README
         uses: actions/checkout@v4
         with:
           repository: ${{ env.SOURCE_REPO }}
           ref: ${{ env.SOURCE_BRANCH }}
           path: source_readme
 
-      - name: Replace buttons section in README.md
+      - name: Update README.md buttons section
         run: |
           REPO_NAME="${GITHUB_REPOSITORY##*/}"
-
-          # Extract section between markers from the source template
           SECTION=$(awk '/<!-- buttons -->/{flag=1;next}/<!-- endbuttons -->/{flag=0}flag' source_readme/README.md)
-
-          # Replace ".github" with the current repository name
-          SECTION_UPDATED=$(echo "$SECTION" | sed "s/\.github/${REPO_NAME}/g")
-
-          # Replace section in the local README.md
+          SECTION_UPDATED=$(echo "$SECTION" | sed "s/\.github/$REPO_NAME/g")
           awk -v new_section="$SECTION_UPDATED" '
-          BEGIN { skip=0 }
-          /<!-- buttons -->/ {
-            print
-            print new_section
-            skip=1
-            next
-          }
-          /<!-- endbuttons -->/ && skip {
-            print
-            skip=0
-            next
-          }
-          !skip { print }
+            BEGIN { skip=0 }
+            /<!-- buttons -->/ {
+              print
+              print new_section
+              skip=1
+              next
+            }
+            /<!-- endbuttons -->/ && skip {
+              print
+              skip=0
+              next
+            }
+            !skip { print }
           ' README.md > README.tmp && mv README.tmp README.md
 
-      - name: Upload updated README.md as artifact
-        uses: actions/upload-artifact@v4
+      - name: Remove source_readme from git index
+        run: git rm --cached -r source_readme || true
+
+      - name: Commit and push updated README
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          name: updated-readme
-          path: README.md
+          file_pattern: README.md
+          commit_message: "chore: sync README buttons from template"
+          branch: ${{ github.ref_name }}
