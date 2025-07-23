@@ -9,7 +9,7 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ivancarlosti/yourlsiccmetaredirect?label=Activity)](https://github.com/ivancarlosti/yourlsiccmetaredirect/pulse)  
 [![GitHub Issues](https://img.shields.io/github/issues/ivancarlosti/yourlsiccmetaredirect?label=Issues&color=orange)](https://github.com/ivancarlosti/yourlsiccmetaredirect/issues)
 [![License](https://img.shields.io/github/license/ivancarlosti/yourlsiccmetaredirect?label=License)](LICENSE)
-[![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/yourlsiccmetaredirect/security)asdad
+[![Security](https://img.shields.io/badge/Security-View%20Here-purple)](https://github.com/ivancarlosti/yourlsiccmetaredirect/security)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa)](https://github.com/ivancarlosti/yourlsiccmetaredirect?tab=coc-ov-file)
 <!-- endbuttons -->
 
