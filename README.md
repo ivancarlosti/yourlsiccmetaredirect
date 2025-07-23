@@ -1,6 +1,7 @@
 # ICC Meta Redirect plugin for YOURLS
 This YOURLS plugin skip banned URLs on some services that check for redirected URLs to filter them. When the shortened URL is called using the configured character before your keyword it will make the redirect using `<meta>` technique.
 
+<!-- buttons -->
 [![Stars](https://img.shields.io/github/stars/ivancarlosti/yourlsiccmetaredirect?label=⭐%20Stars&color=gold&style=flat)](https://github.com/ivancarlosti/yourlsiccmetaredirect/stargazers)
 [![Watchers](https://img.shields.io/github/watchers/ivancarlosti/yourlsiccmetaredirect?label=Watchers&style=flat&color=red)](https://github.com/sponsors/ivancarlosti)
 [![Forks](https://img.shields.io/github/forks/ivancarlosti/yourlsiccmetaredirect?label=Forks&style=flat&color=ff69b4)](https://github.com/sponsors/ivancarlosti)
@@ -24,6 +25,7 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 ## Requirements
 * YOURLS 1.10+
 
+<!-- footer -->
 ---
 
 ## 🧑‍💻 Consulting and technical support
