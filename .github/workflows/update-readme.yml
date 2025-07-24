@@ -1,82 +1,68 @@
 name: Update README
 
-# Allow GitHub Actions to commit and push changes
-permissions:
-  contents: write
-
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Allows manual triggering
   schedule:
-    - cron: '0 4 * * *'  # Every day at 4 AM UTC
+    - cron: '0 4 * * *' # Runs every day at 4AM UTC
 
 jobs:
-  update-readme:
+  update-readme-buttons:
     runs-on: ubuntu-latest
-
     env:
       SOURCE_REPO: ivancarlosti/.github
       SOURCE_BRANCH: main
 
     steps:
-      - name: Checkout current repository
+      # Checkout current (target) repository
+      - name: Checkout target repo
         uses: actions/checkout@v4
 
-      - name: Checkout source README template
+      # Checkout source README
+      - name: Checkout source READMEs
         uses: actions/checkout@v4
         with:
           repository: ${{ env.SOURCE_REPO }}
           ref: ${{ env.SOURCE_BRANCH }}
           path: source_readme
-- name: Copy LICENSE from source
-  run: cp source_readme/LICENSE LICENSE
 
-      - name: Update README.md (buttons and footer)
+      # Extract and update buttons section
+      - name: Replace buttons section in README.md
+        id: update-readme
         run: |
           set -e
+
           REPO_NAME="${GITHUB_REPOSITORY##*/}"
 
-          # --- Extract buttons block from source ---
-          BUTTONS=$(awk '/<!-- buttons -->/{flag=1;next}/<!-- endbuttons -->/{flag=0}flag' source_readme/README.md)
-          BUTTONS_UPDATED=$(echo "$BUTTONS" | sed "s/\.github/${REPO_NAME}/g")
+          # Extract section from source README
+          SECTION=$(awk '/<!-- buttons -->/{flag=1;next}/<!-- endbuttons -->/{flag=0}flag' source_readme/README.md)
 
-          # --- Extract footer block from source (everything from <!-- footer --> onward) ---
-          FOOTER=$(awk '/<!-- footer -->/{flag=1}flag' source_readme/README.md)
+          # Replace .github with actual repo name
+          SECTION_UPDATED=$(echo "$SECTION" | sed "s/\.github/$REPO_NAME/g")
 
-          # --- Replace buttons section in README.md ---
-          UPDATED=$(awk -v buttons="$BUTTONS_UPDATED" '
-            BEGIN { skip=0 }
+          # Replace section in current repo README
+          awk -v new_section="$SECTION_UPDATED" '
             /<!-- buttons -->/ {
-              print
-              print buttons
-              skip=1
+              print;
+              print new_section;
+              skip=1;
               next
             }
             /<!-- endbuttons -->/ && skip {
-              print
-              skip=0
+              skip=0;
               next
             }
             !skip { print }
-          ' README.md)
+          ' README.md > README.tmp && mv README.tmp README.md
 
-          # --- Replace everything after <!-- footer --> with FOOTER ---
-          echo "$UPDATED" | awk -v footer="$FOOTER" '
-            /<!-- footer -->/ {
-              print footer
-              found=1
-              exit
-            }
-            { print }
-          ' > README.tmp && mv README.tmp README.md
-
+      # Make sure submodule-like folder is not committed
       - name: Remove source_readme from git index
         run: git rm --cached -r source_readme || true
 
-      - name: Commit and push changes
+      # Commit and push if README.md changed
+      - name: Commit updated README
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-file_pattern: |
-  README.md
-  LICENSE
-          commit_message: "Sync files from template [▶️]"
+          file_pattern: README.md
+          commit_message: "chore: sync README buttons from template"
           branch: ${{ github.ref_name }}
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Required for push
