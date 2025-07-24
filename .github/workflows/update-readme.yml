@@ -78,5 +78,5 @@ jobs:
 file_pattern: |
   README.md
   LICENSE
-          commit_message: "Sync README from template [▶️]"
+          commit_message: "Sync files from template [▶️]"
           branch: ${{ github.ref_name }}
