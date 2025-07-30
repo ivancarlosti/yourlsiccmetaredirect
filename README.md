@@ -18,7 +18,7 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 
 ## Instructions
 * Download the plugin release
-* Upload folder `icc-meta-redirect` with files into `/user/plugins`
+* Create the folder `icc-meta-redirect` into YOURLS path `/user/plugins` and store `plugin.php` on it
 * Activate plugin in `/admin/plugins.php` page of your YOURLS installation
 * (optional) Access `Meta Redirect Settings` page
 * (optional) Manage settings and save
