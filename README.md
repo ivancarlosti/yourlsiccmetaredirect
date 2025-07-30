@@ -18,9 +18,10 @@ This YOURLS plugin skip banned URLs on some services that check for redirected U
 
 ## Instructions
 * Download the plugin release
-* Update plugin.php if needed, default character is `.` (dot), default wait time is `1` second.
 * Upload folder `icc-meta-redirect` with files into `/user/plugins`
-* Go to the Plugins administration page and activate the plugin
+* Activate plugin in `/admin/plugins.php` page of your YOURLS installation
+* (optional) Access `Meta Redirect Settings` page
+* (optional) Manage settings and save
 * You can now use your character to make a meta redirect instead of server redirect, example: [icc.gg/.signal](https://icc.gg/.signal)
 
 ## Requirements
