@@ -3,7 +3,7 @@
 Plugin Name: ICC Meta Redirect
 Plugin URI: https://github.com/ivancarlosti/yourlsiccmetaredirect
 Description: Use meta tag redirect by adding a prefix before the keyword (default is dot).
-Version: 1.2
+Version: 1.01
 Author: Ivan Carlos
 Author URI: https://ivancarlos.com.br/
 */
