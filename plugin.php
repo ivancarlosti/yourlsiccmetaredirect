@@ -17,7 +17,7 @@ define( 'ICC_MRDR_DEFAULT_DELAY', 1 );
 // Register admin page for settings
 yourls_add_action( 'plugins_loaded', 'icc_mrdr_add_page' );
 function icc_mrdr_add_page() {
-    yourls_register_plugin_page( 'icc_meta_redirect_config', 'Meta Redirect Settings', 'icc_mrdr_do_page' );
+    yourls_register_plugin_page( 'icc_meta_redirect_config', 'Meta Redirect', 'icc_mrdr_do_page' );
 }
 
 // Display and handle the plugin settings admin page
